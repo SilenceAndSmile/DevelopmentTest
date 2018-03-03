@@ -34,7 +34,10 @@ Warning: 正式发布时可能删除中文说明
 + Use dashes(-) in any name. 使用连字符(-)。
 
 ## 2 Line Length 行长度
-##### Maximum line length is 80 characters. 每行最多不超过80个字符。
+```
+Maximum line length is 80 characters.
+每行最多不超过80个字符。
+```
 <strong>The following exceptions:_ 以下情形例外：</strong>
 + _Long import statements._
 + _URLs in comments._
@@ -51,12 +54,22 @@ No: #You can found this file at
 Do not use backslash line continuation, just use an extra pair of parentheses. 不要使用反斜杠连接行，而应使用一组额外的括号。
 
 ## 3 Comments 注释
-##### Uniform use of English writing Comments. 统一使用英语书写注释。
+```
+Uniform use of English writing Comments.
+统一使用英语书写注释。
+```
 ### 3.1 Module(part), Class and Function 模块(一部分)，类和函数
-##### For these, write comments using document strings. 对于这些，使用文档字符串书写注释。
+```
+For these, write comments using document strings.
+对于这些，使用文档字符串书写注释。
+```
 __The document strings start and end with three quotes. A doc string is a string that is the first statement in a module, class or function.__ These strings can be extracted automatically through the \_\_doc__ member of the object and are used by pydoc. <strong>文档字符串使用三个引号来开始和结束。文档字符串是模块, 类或函数里的第一个语句。</strong>这些字符串可以通过对象的__doc__成员被自动提取, 并且被pydoc所用。
 #### 3.1.1 Module(part) 模块(一部分)
-##### Briefly explain its purpose. 简要说明其用途。
+```
+Briefly explain its purpose.
+简要说明其用途。
+```
+
 ```python
 """Use spectral clustering analysis for geographic network data.
 """
@@ -65,4 +78,9 @@ __The document strings start and end with three quotes. A doc string is a string
 
 
 ## 4 Imports Formatting 导入格式
-##### Imports should be on separate lines.Imports are always put at the top of the file, just after the doc strings of module and before module globals and constants. 每个导入应该单独占一行。导入文件位于模块的文档字符串和模块全局变量与全局常量之前。
+```
+Imports should be on separate lines.
+每个导入应该单独占一行。
+Imports are always put at the top of the file, just after the doc strings of module and before module globals and constants.
+导入文件位于模块的文档字符串和模块全局变量与全局常量之前。
+```
