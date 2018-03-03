@@ -25,5 +25,5 @@ Warning: 正式发布时可能删除中文说明
 
 ### Supplementary Explanation 补充说明
 + A Python Module is a file that contains Python object definitions and Python statements.  一个Python Module(模块), 是一个包含了Python对象定义和Python语句的文件。
-+ "Internal" means internal to a module or protected or private within a class. ”内部(Internal)”表示仅模块内可用, 或者在类内是保护或私有的.
-+ single underscore
++ "Internal" means internal to a module or protected or private within a class. ”内部(Internal)”表示仅模块内可用，或者在类内是保护或私有的.
++ single underscore sdfsdf
