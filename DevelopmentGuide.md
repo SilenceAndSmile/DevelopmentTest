@@ -39,19 +39,19 @@ Maximum line length is 80 characters.
 每行最多不超过80个字符。
 ```
 <strong>The following exceptions:_ 以下情形例外：</strong>
-+ _Long import statements._
-+ _URLs in comments._
++ <em>Long import statements. 长的导入模块语句。
++ URLs in comments. 注释中的URL。</em>
 ```python
-Yes: #You can found this file at
-     #https://github.com/SilenceAndSmile/DevelopmentTest/blob/master/DevelopmentGuide.md
+Yes: # You can found this file at
+     # https://github.com/SilenceAndSmile/DevelopmentTest/blob/master/DevelopmentGuide.md
 ```
 ```python
-No: #You can found this file at
-    #https://github.com/SilenceAndSmile/DevelopmentTest/blob/master/DevelopmentGuide
-    #.md
+No: # You can found this file at
+    # https://github.com/SilenceAndSmile/DevelopmentTest/blob/master/DevelopmentGuide.
+    # md
 ```
-
 Do not use backslash line continuation, just use an extra pair of parentheses. 不要使用反斜杠连接行，而应使用一组额外的括号。
+<em>A row over 80 characters in comment(except URLs) need be divided into multiple rows(use vertical alignment between this divided rows). See examples in the comments. 注释中超过80个字符的行(URL除外)需要被分为多行(在这些分割开的行之间使用垂直对齐)。请参阅注释中的例子。</em>
 ```python
 Yes: SpectralClustering(
          n_clusters=8, eigen_solver=None, random_state=None, n_init=10, gamma=1.0,
@@ -64,10 +64,11 @@ Yes: SpectralClustering(
 Uniform use of English writing Comments.
 统一使用英语书写注释。
 ```
-### 3.1 Modules(part), Functions and Methods, Classes 模块(一部分)，函数和方法，类
+If you think comments is too abstract(not easy to understand), give an example. 如果你认为注释太抽象(不易理解)，则给出一个实例。
+### 3.1 Document Strings 文档字符串
 ```
-For these, write comments using document strings.
-对于这些，使用文档字符串书写注释。
+This applies to Modules(part), Functions and Methods, Classes.
+这适用于模块(一部分)，函数和方法，类。
 ```
 __The document strings start and end with three quotes. A doc string is a string that is the first statement in a module, class or function.__ These strings can be extracted automatically through the \_\_doc__ member of the object and are used by pydoc. <strong>文档字符串使用三个引号来开始和结束。文档字符串是模块, 类或函数里的第一个语句。</strong>这些字符串可以通过对象的__doc__成员被自动提取, 并且被pydoc所用。
 #### 3.1.1 Modules(part) 模块(一部分)
@@ -99,10 +100,12 @@ __Returns: (or Yields: for generators)__
 
 __References(if have):__
 + Just list the main references. References have an order number. 只列出主要参考文献。参看文献应当有序号。
-+ References have three lines and use vertical alignment between different lines. Use the comma to separate different items in the same line. 参考文献应该具有三行并在不同行之间使用垂直对齐。使用逗号分隔同一行中的不同项。
-  + The first line list the title and time. 第一行列出标题和时间。
-  + The second line list the authors. 第二行列出作者。
-  + The last line list the internet connection. 第三行列出网络链接。
++ References have three little sections and use vertical alignment between different little sections. Use the comma to separate different items in the same little section. 参考文献应该具有三小节并在不同小节之间使用垂直对齐。使用逗号分隔同一小节中的不同项。
+  + The first little section list the title and time. 第一小节列出标题和时间。
+  + The second little section list the authors. 第二小节列出作者。
+  + The last little section list the internet connection. 第三小节列出网络链接。
+
+<em>Note: A row over 80 characters in comment(except URLs) were divided into multiple rows and used vertical alignment between this divided rows).注意：下文中超过80个字符的一句话被分割为了多行并在这些行之间使用了垂直对齐。</em>
 ```Python
 def discretize(vectors, copy=True, max_svd_restarts=30, n_iter_max=20,
                random_state=None):
@@ -118,22 +121,57 @@ def discretize(vectors, copy=True, max_svd_restarts=30, n_iter_max=20,
         labels: array of integers, shape: n_samples.
             The labels of the clusters.
     References:
-        1.Multiclass spectral clustering, 2003
-          Stella X. Yu, Jianbo Shi
-          http://www1.icsi.berkeley.edu/~stellayu/publication/doc/2003kwayICCV.pdf
+        1. Multiclass spectral clustering, 2003
+           Stella X. Yu, Jianbo Shi
+           http://www1.icsi.berkeley.edu/~stellayu/publication/doc/2003kwayICCV.pdf
     """
+
     pass
 ```
 
 #### 3.1.3 Classes 类
 ```
-Classes should have a doc string below the class definition describing the class. If your class has public attributes, they should be documented here in an Attributes section and follow the same formatting as a function's Args section.
+Classes must have a doc string below the class definition describing the class.
+类必须在其定义下有一个用于描述该类的文档字符串.
 ```
+If your class has public attributes or/and references, they need to be documented here in an Attributes section or/and References section following the same formatting as a function's Args section and References section.
+如果你的类有公共属性(Attributes)或/和参考文献, 那么文档中要有一个属性(Attributes)节或/和参考文献节，(它们)遵守与函数的参数节和参考文献节相同的格式。
+```python
+class SpectralClustering(BaseEstimator, ClusterMixin):
+    """Apply clustering to a projection to the normalized laplacian.
+    ...
+    Attributes:
+        affinity_matrix_: array-like, shape (n_samples, n_samples)
+            Affinity matrix used for clustering. Available only if after calling
+            ``fit``.
+        ...
+    References:
+        1. Normalized cuts and image segmentation, 2000
+           Jianbo Shi, Jitendra Malik
+           http://citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.160.2324
+        2. A Tutorial on Spectral Clustering, 2007
+           Ulrike von Luxburg
+           http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.165.9323
+        ...
+    """
+    pass
+```
+
+### 3.2 Block Comments 块注释
+```
+This applies to Modules(other parts), complicated operations.
+这适用于模块(其余部分)，复杂操作。
+```
+#### 3.2.1 Modules(other parts) 模块(其余部分)
+
+#### 3.2.2 Complicated Operations 复杂操作
+
+### 3.3 Inline Comments 行注释
 
 ## 4 Imports Formatting 导入格式
 ```
-Imports should be on separate lines.
+Imports were be on separate lines.
 每个导入应该单独占一行。
-Imports are always put at the top of the file, just after the comments of module and before module globals and constants.
+Imports are put at the top of the file, after the comments of module and before module globals and constants.
 导入文件位于模块注释之后，模块全局变量与全局常量之前。
 ```
