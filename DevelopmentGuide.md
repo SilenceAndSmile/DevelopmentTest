@@ -52,35 +52,88 @@ No: #You can found this file at
 ```
 
 Do not use backslash line continuation, just use an extra pair of parentheses. 不要使用反斜杠连接行，而应使用一组额外的括号。
+```python
+Yes: SpectralClustering(
+         n_clusters=8, eigen_solver=None, random_state=None, n_init=10, gamma=1.0,
+         affinity=’rbf’, n_neighbors=10, eigen_tol=0.0, assign_labels=’kmeans’, degree=3,
+         coef0=1, kernel_params=None, n_jobs=1)
+```
 
 ## 3 Comments 注释
 ```
 Uniform use of English writing Comments.
 统一使用英语书写注释。
 ```
-### 3.1 Module(part), Class and Function 模块(一部分)，类和函数
+### 3.1 Modules(part), Functions and Methods, Classes 模块(一部分)，函数和方法，类
 ```
 For these, write comments using document strings.
 对于这些，使用文档字符串书写注释。
 ```
 __The document strings start and end with three quotes. A doc string is a string that is the first statement in a module, class or function.__ These strings can be extracted automatically through the \_\_doc__ member of the object and are used by pydoc. <strong>文档字符串使用三个引号来开始和结束。文档字符串是模块, 类或函数里的第一个语句。</strong>这些字符串可以通过对象的__doc__成员被自动提取, 并且被pydoc所用。
-#### 3.1.1 Module(part) 模块(一部分)
+#### 3.1.1 Modules(part) 模块(一部分)
 ```
 Briefly explain its purpose.
 简要说明其用途。
 ```
-
 ```python
 """Use spectral clustering analysis for geographic network data.
 """
 # other comment of module.Do not confuse it with document strings.
 ```
 
+#### 3.1.2 Functions and Methods 函数和方法
+<em>As used in this section "function" applies to methods, function, and generators. 本节下文所指的函数,包括函数, 方法, 以及生成器.</em>
+```
+A docstring describes the function's calling syntax and its semantics, not its implementation.
+文档字符串描述函数的调用语法及其语义，而不是其实现。
+```
+<strong>Certain aspects of a function were documented in special sections, listed below. Each section begins with a heading line, which ends with a colon. Sections were indented 4 spaces, except for the heading. 关于函数的几个方面要在下面列出的特定小节中进行描述。 每节以标题行开头，标题行以冒号结尾。 除了标题外，每节缩进四个空格。</strong>
+__Args:__
++ List each parameter by name. A description follow the name, and be separated by a colon and a space. 按名称列出每个参数。参数名后紧跟描述，(这二者)使用冒号和空格进行分割。
++ The description mention required type(s) and the meaning of the argument. The meaning of the argument was written in a new line(use 4 paces to indent, do not need to align with the first character of argument's type). 描述必须包含参数类型和参数含义。参数含义要写在新的一行(使用4个空格的悬挂缩进，不需要和参数类型的第一个字符对齐)。
++ If the argument has default value, list the default value on the type line of the argument. 如果参数具有缺省值，则应将它们在参数类型那一行列出。
+
+__Returns: (or Yields: for generators)__
++ Describe the type and semantics of the return value. If the function only returns None, this section is not required. 描述返回值的类型和含义. 如果函数返回None, 则可略去。
++ The semantics of the return value was written in a new line(use 4 paces to indent). 返回值含义写在新的一行上(使用4个空格来缩进)。
+
+__References(if have):__
++ Just list the main references. References have an order number. 只列出主要参考文献。参看文献应当有序号。
++ References have three lines and use vertical alignment between different lines. Use the comma to separate different items in the same line. 参考文献应该具有三行并在不同行之间使用垂直对齐。使用逗号分隔同一行中的不同项。
+  + The first line list the title and time. 第一行列出标题和时间。
+  + The second line list the authors. 第二行列出作者。
+  + The last line list the internet connection. 第三行列出网络链接。
+```Python
+def discretize(vectors, copy=True, max_svd_restarts=30, n_iter_max=20,
+               random_state=None):
+    """Search for a partition matrix (clustering) which is closest to the
+    eigenvector embedding.
+    Args:
+        vectors: array-like, shape: (n_samples, n_clusters)
+            The embedding space of the samples.
+        copy: boolean, optional, default: True
+            Whether to copy vectors, or perform in-place normalization.
+        ...
+    Returns:
+        labels: array of integers, shape: n_samples.
+            The labels of the clusters.
+    References:
+        1.Multiclass spectral clustering, 2003
+          Stella X. Yu, Jianbo Shi
+          http://www1.icsi.berkeley.edu/~stellayu/publication/doc/2003kwayICCV.pdf
+    """
+    pass
+```
+
+#### 3.1.3 Classes 类
+```
+Classes should have a doc string below the class definition describing the class. If your class has public attributes, they should be documented here in an Attributes section and follow the same formatting as a function's Args section.
+```
 
 ## 4 Imports Formatting 导入格式
 ```
 Imports should be on separate lines.
 每个导入应该单独占一行。
-Imports are always put at the top of the file, just after the doc strings of module and before module globals and constants.
-导入文件位于模块的文档字符串和模块全局变量与全局常量之前。
+Imports are always put at the top of the file, just after the comments of module and before module globals and constants.
+导入文件位于模块注释之后，模块全局变量与全局常量之前。
 ```
