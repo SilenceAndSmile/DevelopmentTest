@@ -4,7 +4,8 @@
 This guide was written by using Atom.<br>
 Warning: 正式发布时可能删除中文说明
 
-### python version: 3.6(.2) python版本: 3.6(.2)
+### Python Version: 3.6(.2) python版本: 3.6(.2)
+### Encoding Format: UTF-8 编码格式：UTF-8
 
 ***
 
@@ -40,7 +41,8 @@ Maximum line length is 80 characters.
 ```
 <strong>The following exceptions:_ 以下情形例外：</strong>
 + <em>Long import statements. 长的导入模块语句。
-+ URLs in comments. 注释中的URL。</em>
++ URLs in comments. 注释中的URL。
++ Inline comments(see in the section 3.3). 行注释(参见3.3节)。</em>
 ```python
 Yes: # You can found this file at
      # https://github.com/SilenceAndSmile/DevelopmentTest/blob/master/DevelopmentGuide.md
@@ -51,7 +53,7 @@ No: # You can found this file at
     # md
 ```
 Do not use backslash line continuation, just use an extra pair of parentheses. 不要使用反斜杠连接行，而应使用一组额外的括号。<br>
-<em>A row over 80 characters in comment(except URLs) need be divided into multiple rows(use vertical alignment between this divided rows). See examples in the comments. 注释中超过80个字符的行(URL除外)需要被分为多行(在这些分割开的行之间使用垂直对齐)。请参阅注释中的例子。</em>
+<em>A row over 80 characters in comment(except URLs) need be divided into multiple rows(use vertical alignment between this divided rows). See examples in the comments section. 注释中超过80个字符的行(URL除外)需要被分为多行(在这些分割开的行之间使用垂直对齐)。请参阅注释一节中的例子。</em>
 ```python
 Yes: SpectralClustering(
          n_clusters=8, eigen_solver=None, random_state=None, n_init=10, gamma=1.0,
@@ -63,6 +65,8 @@ Yes: SpectralClustering(
 ```
 Uniform use of English writing Comments.
 统一使用英语书写注释。
+Never describe the code, just tell what you're tying to do.
+永远不要描述代码，只讲你要做什么。
 ```
 If you think comments is too abstract(not easy to understand), give an example. 如果你认为注释太抽象(不易理解)，则给出一个实例。
 ### 3.1 Document Strings 文档字符串
@@ -135,8 +139,7 @@ def discretize(vectors, copy=True, max_svd_restarts=30, n_iter_max=20,
 Classes must have a doc string below the class definition describing the class.
 类必须在其定义下有一个用于描述该类的文档字符串.
 ```
-If your class has public attributes or/and references, they need to be documented here in an Attributes section or/and References section following the same formatting as a function's Args section and References section.
-如果你的类有公共属性(Attributes)或/和参考文献, 那么文档中要有一个属性(Attributes)节或/和参考文献节，(它们)遵守与函数的参数节和参考文献节相同的格式。
+If your class has public attributes or/and references, they need to be documented here in an Attributes section or/and References section following the same formatting as a function's Args section and References section. 如果你的类有公共属性(Attributes)或/和参考文献, 那么文档中要有一个属性(Attributes)节或/和参考文献节，(它们)遵守与函数的参数节和参考文献节相同的格式。
 ```python
 class SpectralClustering(BaseEstimator, ClusterMixin):
     """Apply clustering to a projection to the normalized laplacian.
@@ -160,14 +163,57 @@ class SpectralClustering(BaseEstimator, ClusterMixin):
 
 ### 3.2 Block Comments 块注释
 ```
-This applies to Modules(other parts), complicated operations.
+This applies to modules(other parts), complicated operations.
 这适用于模块(其余部分)，复杂操作。
 ```
 #### 3.2.1 Modules(other parts) 模块(其余部分)
+```
+After the document strings of modules, write Author and License section.
+在文档字符串之后，写作者和许可节。
+```
+<em>If the module have more than one author, they need be vertically aligned. 如果模块有超过一个作者，则他们要垂直对齐。</em>
+```python
+"""document strings
+"""
+# Author: Gael Varoquaux gael.varoquaux@normalesup.org
+#         Brian Cheung
+#         Wei LI <kuantkid@gmail.com>
+# License: BSD 3 clause
+
+pass
+```
 
 #### 3.2.2 Complicated Operations 复杂操作
+```
+Complicated operations get a few lines of comments(align vertically) before the operations commence.
+复杂操作在其实现开始之前写若干行注释(垂直对齐)。
+```
+```python
+# Normalize the rows of the eigenvectors.  Samples should lie on the unit
+# hypersphere centered at the origin.  This transforms the samples in the
+# embedding space to the space of partition matrices.
+vectors = vectors / np.sqrt((vectors ** 2).sum(axis=1))[:, np.newaxis]
+
+pass
+```
 
 ### 3.3 Inline Comments 行注释
+```
+Inline comments are at the end of the code's line.
+行注释位于代码行的末尾。
+Two spaces between code and inline comments.
+代码和行注释之间间隔两个空格。
+```
++ The Non-obvious ones code (or you think necessary) get a inline comments. 非显而易见(或你认为有必要)的代码可以写行注释。
++ Unless necessary, Global variables and constants generally do not have inline comments. 除非必要，一般全局变量和常量不写行注释。
+<em>Global variables and constants of this section means the variables and constants which were located outside any classes and functions. 此处的全局变量和常量指代位于任何类和函数之外的变量和常。</em>
+```python
+...
+PI = 3.141592654
+...
+if i & (i-1) == 0:  # true if i is a power of 2
+    pass
+```
 
 ## 4 Imports Formatting 导入格式
 ```
@@ -176,3 +222,5 @@ Imports were be on separate lines.
 Imports are put at the top of the file, after the comments of module and before module globals and constants.
 导入文件位于模块注释之后，模块全局变量与全局常量之前。
 ```
+
+## 5 Indentation 缩进
