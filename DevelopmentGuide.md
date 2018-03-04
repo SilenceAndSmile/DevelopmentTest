@@ -50,7 +50,7 @@ No: # You can found this file at
     # https://github.com/SilenceAndSmile/DevelopmentTest/blob/master/DevelopmentGuide.
     # md
 ```
-Do not use backslash line continuation, just use an extra pair of parentheses. 不要使用反斜杠连接行，而应使用一组额外的括号。
+Do not use backslash line continuation, just use an extra pair of parentheses. 不要使用反斜杠连接行，而应使用一组额外的括号。<br>
 <em>A row over 80 characters in comment(except URLs) need be divided into multiple rows(use vertical alignment between this divided rows). See examples in the comments. 注释中超过80个字符的行(URL除外)需要被分为多行(在这些分割开的行之间使用垂直对齐)。请参阅注释中的例子。</em>
 ```python
 Yes: SpectralClustering(
@@ -89,6 +89,7 @@ A docstring describes the function's calling syntax and its semantics, not its i
 文档字符串描述函数的调用语法及其语义，而不是其实现。
 ```
 <strong>Certain aspects of a function were documented in special sections, listed below. Each section begins with a heading line, which ends with a colon. Sections were indented 4 spaces, except for the heading. 关于函数的几个方面要在下面列出的特定小节中进行描述。 每节以标题行开头，标题行以冒号结尾。 除了标题外，每节缩进四个空格。</strong>
+
 __Args:__
 + List each parameter by name. A description follow the name, and be separated by a colon and a space. 按名称列出每个参数。参数名后紧跟描述，(这二者)使用冒号和空格进行分割。
 + The description mention required type(s) and the meaning of the argument. The meaning of the argument was written in a new line(use 4 paces to indent, do not need to align with the first character of argument's type). 描述必须包含参数类型和参数含义。参数含义要写在新的一行(使用4个空格的悬挂缩进，不需要和参数类型的第一个字符对齐)。
