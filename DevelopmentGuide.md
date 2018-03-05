@@ -34,10 +34,10 @@ Last Update Time: March 5, 2018<br>
 + 5 Indentation 缩进
 + 6 Blank Lines 空行
 + [7 Punctuation and Whitespace 标点和空格](#jump)</strong>
-
+<br>
 
 <h2 id='1'>1 Nameing 命名</h2>
-<h3 id="1.1">1.1 Overview 概览</h3>
+<h3 id='1.1'>1.1 Overview 概览</h3>
 
 | Type 类型                                | Public 公有        | Internal  内部                                                    |
 | :--------------------------------------: | :----------------: | :---------------------------------------------------------------: |
@@ -52,18 +52,21 @@ Last Update Time: March 5, 2018<br>
 | Function/Method Parameters 函数/方法参数 | lower_with_under   | lower_with_under                                                  |
 | Local Variables 局部变量                 | lower_with_under   |                                                                   |
 
-### <span id="1.2">1.2 Supplementary Explanation 补充说明</span>
+<h3 id='1.2'>1.2 Supplementary Explanation 补充说明</h3>
+
 + A Python Module is a file that contains Python object definitions and Python statements. A Module accomplishes a task.Unlike to c++/Java,there is no need to limit yourself to one class per module.  一个Python Module(模块)， 是一个包含了Python对象定义和Python语句的文件。与c++/Java不同，不限制一个模块一个类。
 + "Internal" means internal to a module or protected or private within a class. ”内部(Internal)”表示仅模块内可用，或者在类内是保护或私有的。
 + To begin with a single underscore, it means protected. To begin with a double underscore, it means private. 单划线开头表示proteced，双划线开头表示private。
 
-### 1.3 Names to Avoid 命名时应当避免
+<h3 id='1.3'>1.3 Names to Avoid 命名时应当避免</h3>
+
 + Single character names except for counters or iterators. 除了计数器和迭代器外使用一个字符命名。
 + Begin with a double underscore and end. 以双划线开始和结束。
 + Use dashes(-) in any name. 使用连字符(-)。
 <br>
 
-## 2 Line Length 行长度
+<h2 id='2'>2 Line Length 行长度</h2>
+
 ```
 Maximum line length is 80 characters.
 每行最多不超过80个字符。
@@ -91,7 +94,8 @@ Yes: SpectralClustering(
 ```
 <br>
 
-## 3 Comments 注释
+<h2 id='3'>     3 Comments 注释</h2>
+
 ```
 Uniform use of English writing Comments.
 统一使用英语书写注释。
@@ -99,7 +103,7 @@ Never describe the code, just tell what you're tying to do.
 永远不要描述代码，只讲你要做什么。
 ```
 If you think comments is too abstract(not easy to understand), give an example. 如果你认为注释太抽象(不易理解)，则给出一个实例。
-### 3.1 Document Strings 文档字符串
+<h3 id='3.1'>3.1 Document Strings 文档字符串</h3>
 ```
 This applies to Modules(part), Functions and Methods, Classes.
 这适用于模块(一部分)，函数和方法，类。
