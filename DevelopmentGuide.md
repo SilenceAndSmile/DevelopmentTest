@@ -2,7 +2,7 @@
 <br>
 <br>
 This guide was written by using Atom.<br>
-The python style of this guide was referred to PEP8 and google python style guide.<br>
+The python style of this guide references PEP8 and google python style guide.<br>
 Warning: 正式发布时可能删除中文说明
 
 ### Python Version: 3.6(.2) python版本: 3.6(.2)
@@ -93,7 +93,7 @@ Briefly explain its purpose.
 A docstring describes the function's calling syntax and its semantics, not its implementation.
 文档字符串描述函数的调用语法及其语义，而不是其实现。
 ```
-<strong>Certain aspects of a function were documented in special sections, listed below. Each section begins with a heading line, which ends with a colon. Sections were indented 4 spaces, except for the heading. 关于函数的几个方面要在下面列出的特定小节中进行描述。 每节以标题行开头，标题行以冒号结尾。 除了标题外，每节缩进四个空格。</strong>
+<strong>Certain aspects of a function were documented in special sections, listed below. Each section begins with a heading line, which ends with a colon. Sections were indented 4 spaces, except for the heading. Use one blank line between different sections. 关于函数的几个方面要在下面列出的特定小节中进行描述。 每节以标题行开头，标题行以冒号结尾。 除了标题外，每节缩进四个空格。不同节之间间隔一个空行。</strong>
 
 __Args:__
 + List each parameter by name. A description follow the name, and be separated by a colon and a space. 按名称列出每个参数。参数名后紧跟描述，(这二者)使用冒号和空格进行分割。
@@ -107,9 +107,9 @@ __Returns: (or Yields: for generators)__
 __References(if have):__
 + Just list the main references. References have an order number. 只列出主要参考文献。参看文献应当有序号。
 + References have three little sections and use vertical alignment between different little sections. Use the comma to separate different items in the same little section. 参考文献应该具有三小节并在不同小节之间使用垂直对齐。使用逗号分隔同一小节中的不同项。
-  + The first little section list the title and time. 第一小节列出标题和时间。
-  + The second little section list the authors. 第二小节列出作者。
-  + The last little section list the internet connection. 第三小节列出网络链接。
+  1. The first little section list the title and time. 第一小节列出标题和时间。
+  2. The second little section list the authors. 第二小节列出作者。
+  3. The last little section list the internet connection. 第三小节列出网络链接。
 
 <em>Note: A row over 80 characters in comment(except URLs) were divided into multiple rows and used vertical alignment between this divided rows). 注意：下文中超过80个字符的一句话被分割为了多行并在这些行之间使用了垂直对齐。</em>
 ```Python
@@ -117,15 +117,18 @@ def discretize(vectors, copy=True, max_svd_restarts=30, n_iter_max=20,
                random_state=None):
     """Search for a partition matrix (clustering) which is closest to the
     eigenvector embedding.
+
     Args:
         vectors: array-like, shape: (n_samples, n_clusters)
             The embedding space of the samples.
         copy: boolean, optional, default: True
             Whether to copy vectors, or perform in-place normalization.
         ...
+
     Returns:
         labels: array of integers, shape: n_samples.
             The labels of the clusters.
+
     References:
         1. Multiclass spectral clustering, 2003
            Stella X. Yu, Jianbo Shi
@@ -145,11 +148,13 @@ If your class has public attributes or/and references, they need to be documente
 class SpectralClustering(BaseEstimator, ClusterMixin):
     """Apply clustering to a projection to the normalized laplacian.
     ...
+
     Attributes:
         affinity_matrix_: array-like, shape (n_samples, n_samples)
             Affinity matrix used for clustering. Available only if after calling
             ``fit``.
         ...
+
     References:
         1. Normalized cuts and image segmentation, 2000
            Jianbo Shi, Jitendra Malik
@@ -159,6 +164,7 @@ class SpectralClustering(BaseEstimator, ClusterMixin):
            http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.165.9323
         ...
     """
+
     pass
 ```
 
@@ -238,6 +244,7 @@ Imports are put at the top of the file, after the comments of module and before 
 
 ```python
 # module comments
+
 import warnings
 
 import numpy as np
@@ -255,7 +262,7 @@ pass
 Indent python code blocks with 4 spaces.
 使用四个空格来缩进代码。
 ```
-<strong>Never use tabs or mix tabs and spaces. 永远不要使用tab或者混合使用tab和空格(缩进时)。</strong>
+<strong>Never use tabs or mix tabs and spaces. 永远不要使用tab或者混合使用tab和空格(缩进时)。</strong><br>
 Align wrapped elements vertically for line continuation. 行连接使用垂直对齐。
 ```Python
 x = ('This will build a very long long '
@@ -263,5 +270,49 @@ x = ('This will build a very long long '
 ```
 
 ## 6 Blank Lines 空行
+```
+Two blank lines between top-level definitions, one blank line between method definitions.
+顶级定义之间空两行, 方法定义之间空一行。
+```
++ Two blank lines between top-level definitions, be they function or class definitions. 函数和类(顶级定义)的顶上空两行。
++ One blank line between method definitions and between the class line and the first method. 类的方法之间，类定义和第一个方法之间空一行。
++ One blank line between Logically independent paragraphs within the function. 函数内逻辑无关的段落之间空一行。
++ The blank line within imports can be found in section 4 (Imports Formatting). 导入部分的空行格式参见第四节(导入格式)。
++ Use single blank lines as you judge appropriate within functions or methods, but do not over-use blank lines. 在函数或方法中你认为合适的地方使用一个空行，但不要过度使用空行。
+
+```python
+# module comments
+
+import warnings
+
+import scipy.sparse as sp
+
+from ..base import BaseEstimator, ClusterMixin, TransformerMixin
+...
+
+
+def _k_init(X, n_clusters, x_squared_norms, random_state, n_local_trials=None):
+    """function comments(document strings)
+    """
+
+    n_samples, n_features = X.shape
+    centers = np.empty((n_clusters, n_features), dtype=X.dtype)
+
+    assert x_squared_norms is not None, 'x_squared_norms None in _k_init'
+    ...
+
+    # Pick first center randomly
+    center_id = random_state.randint(n_samples)
+    ...
+
+return centers
+
+
+def _validate_center_shape(X, n_centers, centers):
+    ...
+
+
+pass
+```
 
 ## 7 Punctuation and Whitespace 标点和空格
