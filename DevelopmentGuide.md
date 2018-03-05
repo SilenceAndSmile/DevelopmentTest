@@ -110,7 +110,7 @@ __References(if have):__
   + The second little section list the authors. 第二小节列出作者。
   + The last little section list the internet connection. 第三小节列出网络链接。
 
-<em>Note: A row over 80 characters in comment(except URLs) were divided into multiple rows and used vertical alignment between this divided rows).注意：下文中超过80个字符的一句话被分割为了多行并在这些行之间使用了垂直对齐。</em>
+<em>Note: A row over 80 characters in comment(except URLs) were divided into multiple rows and used vertical alignment between this divided rows). 注意：下文中超过80个字符的一句话被分割为了多行并在这些行之间使用了垂直对齐。</em>
 ```Python
 def discretize(vectors, copy=True, max_svd_restarts=30, n_iter_max=20,
                random_state=None):
@@ -222,5 +222,16 @@ Imports were be on separate lines.
 Imports are put at the top of the file, after the comments of module and before module globals and constants.
 导入文件位于模块注释之后，模块全局变量与全局常量之前。
 ```
+<em>If you import more than one contents from same package/module, they can be written on the same line.  导入同一个package/module中的不同内容时可以写在同一行。</em>
++ Do not use relative names in imports and appear cyclic import. 不要在导入时使用相对命名和出现循环导入。
++ A standard import should: 一个标准导入应该：
+  1. use import x for importing packages and modules. 导入包和模块时使用import x。
+  2. use from x import y (as z) where x is the package prefix and y is the module name with no prefix. 使用from x import y (as z) 当x是包前缀而y是模块名(不带前缀)。
++ Imports need to be grouped with the order being most generic to least generic: 导入要按照最常用到最不常用的顺序分组：
+  1. standard library imports 标准库导入
+  2. third-party imports 第三方库导入
+  3. application-specific imports 应用程序(本项目的package/module)导入
+
+  Within each grouping, imports should be sorted lexicographically, ignoring case, according to each module's full package path. 
 
 ## 5 Indentation 缩进
