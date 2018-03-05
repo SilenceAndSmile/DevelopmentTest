@@ -19,21 +19,21 @@ Last Update Time: March 5, 2018<br>
 <strong>+ [1 Nameing 命名](#1)
   + [1.1 Overview 概览](#1.1)
   + [1.2 Supplementary Explanation 补充说明](#1.2)
-  + 1.3 Names to Avoid 命名时应当避免
-+ 2 Line Length 行长度
-+ 3 Comments 注释
-  + 3.1 Document Strings 文档字符串
-    + 3.1.1 Modules(part) 模块(一部分)
-    + 3.1.2 Functions and Methods 函数和方法
-    + 3.1.3 Classes 类
-  + 3.2 Block Comments 块注释
-    + 3.2.1 Modules(other parts) 模块(其余部分)
-    + 3.2.2 Complicated Operations 复杂操作
-  + 3.3 Inline Comments 行注释
-+ 4 Imports Formatting 导入格式
-+ 5 Indentation 缩进
-+ 6 Blank Lines 空行
-+ [7 Punctuation and Whitespace 标点和空格](#jump)</strong>
+  + [1.3 Names to Avoid 命名时应当避免](#1.3)
++ [2 Line Length 行长度](#2)
++ [3 Comments 注释](#3)
+  + [3.1 Document Strings 文档字符串](#3.1)
+    + [3.1.1 Modules(part) 模块(一部分)](#3.1.1)
+    + [3.1.2 Functions and Methods 函数和方法](#3.1.2)
+    + [3.1.3 Classes 类](#3.1.3)
+  + [3.2 Block Comments 块注释](#3.2)
+    + [3.2.1 Modules(other parts) 模块(其余部分)](#3.2.1)
+    + [3.2.2 Complicated Operations 复杂操作](#3.2.2)
+  + [3.3 Inline Comments 行注释](#3.3)
++ [4 Imports Formatting 导入格式](#4)
++ [5 Indentation 缩进](#5)
++ [6 Blank Lines 空行](#6)
++ [7 Punctuation and Whitespace 标点和空格](#7)</strong>
 <br>
 
 <h2 id='1'>1 Nameing 命名</h2>
@@ -94,7 +94,7 @@ Yes: SpectralClustering(
 ```
 <br>
 
-<h2 id='3'>     3 Comments 注释</h2>
+<h2 id='3'>3 Comments 注释</h2>
 
 ```
 Uniform use of English writing Comments.
@@ -104,12 +104,14 @@ Never describe the code, just tell what you're tying to do.
 ```
 If you think comments is too abstract(not easy to understand), give an example. 如果你认为注释太抽象(不易理解)，则给出一个实例。
 <h3 id='3.1'>3.1 Document Strings 文档字符串</h3>
+
 ```
 This applies to Modules(part), Functions and Methods, Classes.
 这适用于模块(一部分)，函数和方法，类。
 ```
 __The document strings start and end with three quotes. A doc string is a string that is the first statement in a module, class or function.__ These strings can be extracted automatically through the \_\_doc__ member of the object and are used by pydoc. <strong>文档字符串使用三个引号来开始和结束。文档字符串是模块, 类或函数里的第一个语句。</strong>这些字符串可以通过对象的__doc__成员被自动提取, 并且被pydoc所用。
-#### 3.1.1 Modules(part) 模块(一部分)
+<h4 id='3.1.1'>3.1.1 Modules(part) 模块(一部分)</h4>
+
 ```
 Briefly explain its purpose.
 简要说明其用途。
@@ -120,7 +122,8 @@ Briefly explain its purpose.
 # other comment of module.Do not confuse it with document strings.
 ```
 
-#### 3.1.2 Functions and Methods 函数和方法
+<h4 id='3.1.2'>3.1.2 Functions and Methods 函数和方法</h4>
+
 <em>As used in this section "function" applies to methods, function, and generators. 本节下文所指的函数,包括函数, 方法, 以及生成器.</em>
 ```
 A docstring describes the function's calling syntax and its semantics, not its implementation.
@@ -171,7 +174,8 @@ def discretize(vectors, copy=True, max_svd_restarts=30, n_iter_max=20,
     pass
 ```
 
-#### 3.1.3 Classes 类
+<h4 id='3.1.3'>3.1.3 Classes 类</h4>
+
 ```
 Classes must have a doc string below the class definition describing the class.
 类必须在其定义下有一个用于描述该类的文档字符串.
@@ -201,12 +205,14 @@ class SpectralClustering(BaseEstimator, ClusterMixin):
     pass
 ```
 
-### 3.2 Block Comments 块注释
+<h3 id='3.2'>3.2 Block Comments 块注释</h3>
+
 ```
 This applies to modules(other parts), complicated operations.
 这适用于模块(其余部分)，复杂操作。
 ```
-#### 3.2.1 Modules(other parts) 模块(其余部分)
+<h4 id='3.2.1'>3.2.1 Modules(other parts) 模块(其余部分)</h4>
+
 ```
 After the document strings of modules, write Author and License section.
 在文档字符串之后，写作者和许可节。
@@ -223,7 +229,8 @@ After the document strings of modules, write Author and License section.
 pass
 ```
 
-#### 3.2.2 Complicated Operations 复杂操作
+<h4 id='3.2.2'>3.2.2 Complicated Operations 复杂操作</h4>
+
 ```
 Complicated operations get a few lines of comments(align vertically) before the operations commence.
 复杂操作在其实现开始之前写若干行注释(垂直对齐)。
@@ -237,7 +244,8 @@ vectors = vectors / np.sqrt((vectors ** 2).sum(axis=1))[:, np.newaxis]
 pass
 ```
 
-### 3.3 Inline Comments 行注释
+<h3 id='3.3'>3.3 Inline Comments 行注释</h3>
+
 ```
 Inline comments are at the end of the code's line.
 行注释位于代码行的末尾。
@@ -256,7 +264,8 @@ Two spaces between code and inline comments.
   ```
 <br>
 
-## 4 Imports Formatting 导入格式
+<h2 id='4'>4 Imports Formatting 导入格式</h2>
+
 ```
 Imports were be on separate lines.
 每个导入应该单独占一行。
@@ -292,7 +301,8 @@ Imports are put at the top of the file, after the comments of module and before 
   ```
 <br>
 
-## 5 Indentation 缩进
+<h2 id='5'>5 Indentation 缩进</h2>
+
 ```
 Indent python code blocks with 4 spaces.
 使用四个空格来缩进代码。
@@ -305,7 +315,8 @@ x = ('This will build a very long long '
 ```
 <br>
 
-## 6 Blank Lines 空行
+<h2 id='6'>6 Blank Lines 空行</h2>
+
 ```
 Two blank lines between top-level definitions, one blank line between method definitions.
 顶级定义之间空两行, 方法定义之间空一行。
@@ -352,7 +363,8 @@ Two blank lines between top-level definitions, one blank line between method def
   ```
 <br>
 
-## 7 Punctuation and Whitespace 标点和空格
+<h2 id='7'>7 Punctuation and Whitespace 标点和空格</h2>
+
 1. Do not terminate your lines with semi-colons and do not use semi-colons to put two commands on the same line. 不要在行尾使用分号，也不要用分号将两条命令放在同一行。
 
 2. No whitespace inside parentheses, brackets or braces. No whitespace before the open paren/bracket that starts an argument list, indexing or slicing. 在所有的括号内不要有空格，在参数列表，索引或者切片的左括号前不应加空格。
