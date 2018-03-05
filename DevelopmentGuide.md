@@ -9,7 +9,7 @@ The python style of this guide references PEP8 and google python style guide.<br
 Author: SilenceAndSmile<br>
 Last Update Time: March 5, 2018<br>
 <br>
-Warning: 正式发布时可能删除中文说明
+~~Warning: 正式发布时可能删除中文说明~~
 
 ### Python Version: 3.6(.2) python版本: 3.6(.2)
 ### Encoding Format: UTF-8 编码格式：UTF-8
@@ -20,7 +20,7 @@ Warning: 正式发布时可能删除中文说明
 ## 1 Nameing 命名
 ### 1.1 Overview 概览
 | Type 类型                                | Public 公有        | Internal  内部                                                    |
-| ---------------------------------------- | ------------------ | ----------------------------------------------------------------- |
+| :--------------------------------------: | :----------------: | :---------------------------------------------------------------: |
 | Modules 模块/文件                        | lower_with_under   | _lower_with_under                                                 |
 | Classes 类                               | CapWords           | _CapWords                                                         |
 | Exceptions 表达式                        | CapWords           |                                                                   |
@@ -423,6 +423,7 @@ Two blank lines between top-level definitions, one blank line between method def
     Guide('You have reached the "died line".')
     ```
 
+</article>
 <script type="text/javascript" src="http://i5ting.github.io/git-quick-start/preview/js/jquery-1.10.2.min.js"></script><script type="text/javascript" src="http://i5ting.github.io/git-quick-start/preview/js/jquery.ztree.all-3.5.min.js"></script><script type="text/javascript" src="http://i5ting.github.io/git-quick-start/preview/js/jquery.ztree_toc.js"></script>
-    
+
 <SCRIPT type="text/javascript" > <!-- $(document).ready(function(){ $('#tree').ztree_toc({ is_auto_number:true, documment_selector:'.markdown-body', ztreeStyle: { width:'260px', overflow: 'auto', position: 'fixed', 'z-index': 2147483647, border: '0px none', left: '0px', top: '0px' } }); }); //--> </SCRIPT>
