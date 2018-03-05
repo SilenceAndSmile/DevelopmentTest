@@ -1,5 +1,3 @@
-<ul id="tree" class="ztree"></ul><article class='markdown-body'>
-
 # Graph Embedding Development Guide for Python Beta v1.0
 <br>
 <br>
@@ -9,7 +7,7 @@ The python style of this guide references PEP8 and google python style guide.<br
 Author: SilenceAndSmile<br>
 Last Update Time: March 5, 2018<br>
 <br>
-~~Warning: 正式发布时可能删除中文说明~~
+<del>Warning: 正式发布时可能删除中文说明</del>
 
 ### Python Version: 3.6(.2) python版本: 3.6(.2)
 ### Encoding Format: UTF-8 编码格式：UTF-8
@@ -17,7 +15,30 @@ Last Update Time: March 5, 2018<br>
 ***
 <br>
 
-## 1 Nameing 命名
+## Contents 目录
+<strong>
++ [1 Nameing 命名](#1)
+  + 1.1 Overview 概览
+  + 1.2 Supplementary Explanation 补充说明
+  + 1.3 Names to Avoid 命名时应当避免
++ 2 Line Length 行长度
++ 3 Comments 注释
+  + 3.1 Document Strings 文档字符串
+    + 3.1.1 Modules(part) 模块(一部分)
+    + 3.1.2 Functions and Methods 函数和方法
+    + 3.1.3 Classes 类
+  + 3.2 Block Comments 块注释
+    + 3.2.1 Modules(other parts) 模块(其余部分)
+    + 3.2.2 Complicated Operations 复杂操作
+  + 3.3 Inline Comments 行注释
++ 4 Imports Formatting 导入格式
++ 5 Indentation 缩进
++ 6 Blank Lines 空行
++ 7 Punctuation and Whitespace 标点和空格
+</strong>
+
+
+## <span id="1">1 Nameing 命名</span>
 ### 1.1 Overview 概览
 | Type 类型                                | Public 公有        | Internal  内部                                                    |
 | :--------------------------------------: | :----------------: | :---------------------------------------------------------------: |
@@ -422,8 +443,3 @@ Two blank lines between top-level definitions, one blank line between method def
     ```python
     Guide('You have reached the "died line".')
     ```
-
-</article>
-<script type="text/javascript" src="http://i5ting.github.io/git-quick-start/preview/js/jquery-1.10.2.min.js"></script><script type="text/javascript" src="http://i5ting.github.io/git-quick-start/preview/js/jquery.ztree.all-3.5.min.js"></script><script type="text/javascript" src="http://i5ting.github.io/git-quick-start/preview/js/jquery.ztree_toc.js"></script>
-
-<SCRIPT type="text/javascript" > <!-- $(document).ready(function(){ $('#tree').ztree_toc({ is_auto_number:true, documment_selector:'.markdown-body', ztreeStyle: { width:'260px', overflow: 'auto', position: 'fixed', 'z-index': 2147483647, border: '0px none', left: '0px', top: '0px' } }); }); //--> </SCRIPT>
