@@ -1,8 +1,14 @@
+<ul id="tree" class="ztree"></ul><article class='markdown-body'>
+
 # Graph Embedding Development Guide for Python Beta v1.0
 <br>
 <br>
 This guide was written by using Atom.<br>
 The python style of this guide references PEP8 and google python style guide.<br>
+<br>
+Author: SilenceAndSmile<br>
+Last Update Time: March 5, 2018<br>
+<br>
 Warning: 正式发布时可能删除中文说明
 
 ### Python Version: 3.6(.2) python版本: 3.6(.2)
@@ -115,7 +121,7 @@ __References(if have):__
   3. The last little section list the internet connection. 第三小节列出网络链接。
 
 <em>Note: A row over 80 characters in comment(except URLs) were divided into multiple rows and used vertical alignment between this divided rows). 注意：下文中超过80个字符的一句话被分割为了多行并在这些行之间使用了垂直对齐。</em>
-```Python
+```python
 def discretize(vectors, copy=True, max_svd_restarts=30, n_iter_max=20,
                random_state=None):
     """Search for a partition matrix (clustering) which is closest to the
@@ -217,13 +223,13 @@ Two spaces between code and inline comments.
 + The Non-obvious ones code (or you think necessary) get a inline comments. 非显而易见(或你认为有必要)的代码可以写行注释。
 + Unless necessary, Global variables and constants generally do not have inline comments. 除非必要，一般全局变量和常量不写行注释。
 <em>Global variables and constants of this section means the variables and constants which were located outside any classes and functions. 此处的全局变量和常量指代位于任何类和函数之外的变量和常。</em>
-```python
-...
-PI = 3.141592654
-...
-if i & (i-1) == 0:  # true if i is a power of 2
-    pass
-```
+  ```python
+  ...
+  PI = 3.141592654
+  ...
+  if i & (i-1) == 0:  # true if i is a power of 2
+      pass
+  ```
 <br>
 
 ## 4 Imports Formatting 导入格式
@@ -246,20 +252,20 @@ Imports are put at the top of the file, after the comments of module and before 
   Within each grouping, imports need to be sorted lexicographically, ignoring case, according to each module's full package path. 在每个分组内，要根据每个模块的完整包路径按字典序排序, 忽略大小写。<br>
   One blank line between different groups. 不同组之间间隔一行。
 
-```python
-# module comments
+  ```python
+  # module comments
 
-import warnings
+  import warnings
 
-import numpy as np
+  import numpy as np
 
-from ..base import BaseEstimator, ClusterMixin
-from ..metrics.pairwise import pairwise_kernels
-...
+  from ..base import BaseEstimator, ClusterMixin
+  from ..metrics.pairwise import pairwise_kernels
+  ...
 
-# global variables and constants of module.
-pass
-```
+  # global variables and constants of module.
+  pass
+  ```
 <br>
 
 ## 5 Indentation 缩进
@@ -269,7 +275,7 @@ Indent python code blocks with 4 spaces.
 ```
 <strong>Never use tabs or mix tabs and spaces. 永远不要使用tab或者混合使用tab和空格(缩进时)。</strong><br>
 Align wrapped elements vertically for line continuation. 行连接使用垂直对齐。
-```Python
+```python
 x = ('This will build a very long long '
      'long long long long long long string')
 ```
@@ -286,40 +292,137 @@ Two blank lines between top-level definitions, one blank line between method def
 + The blank line within imports can be found in section 4 (Imports Formatting). 导入部分的空行格式参见第四节(导入格式)。
 + Use single blank lines as you judge appropriate within functions or methods, but do not over-use blank lines. 在函数或方法中你认为合适的地方使用一个空行，但不要过度使用空行。
 
-```python
-# module comments
+  ```python
+  # module comments
 
-import warnings
+  import warnings
 
-import scipy.sparse as sp
+  import scipy.sparse as sp
 
-from ..base import BaseEstimator, ClusterMixin, TransformerMixin
-...
-
-
-def _k_init(X, n_clusters, x_squared_norms, random_state, n_local_trials=None):
-    """function comments(document strings)
-    """
-
-    n_samples, n_features = X.shape
-    centers = np.empty((n_clusters, n_features), dtype=X.dtype)
-
-    assert x_squared_norms is not None, 'x_squared_norms None in _k_init'
-    ...
-
-    # Pick first center randomly
-    center_id = random_state.randint(n_samples)
-    ...
-
-return centers
+  from ..base import BaseEstimator, ClusterMixin, TransformerMixin
+  ...
 
 
-def _validate_center_shape(X, n_centers, centers):
-    ...
+  def _k_init(X, n_clusters, x_squared_norms, random_state, n_local_trials=None):
+      """function comments(document strings)
+      """
+
+      n_samples, n_features = X.shape
+      centers = np.empty((n_clusters, n_features), dtype=X.dtype)
+
+      assert x_squared_norms is not None, 'x_squared_norms None in _k_init'
+      ...
+
+      # Pick first center randomly
+      center_id = random_state.randint(n_samples)
+      ...
+
+  return centers
 
 
-pass
-```
+  def _validate_center_shape(X, n_centers, centers):
+      ...
+
+
+  pass
+  ```
 <br>
 
 ## 7 Punctuation and Whitespace 标点和空格
+1. Do not terminate your lines with semi-colons and do not use semi-colons to put two commands on the same line. 不要在行尾使用分号，也不要用分号将两条命令放在同一行。
+
+2. No whitespace inside parentheses, brackets or braces. No whitespace before the open paren/bracket that starts an argument list, indexing or slicing. 在所有的括号内不要有空格，在参数列表，索引或者切片的左括号前不应加空格。
+    ```python
+    Yes: spam(ham[1], {eggs: 2}, [])
+         spam(1)
+         dict['key'] = list[index]
+    ```
+    ```python
+    No: spam(ham[1], {eggs: 2}, [])
+        spam (1)
+        dict ['key'] = list [index]
+    ```
+    ```python
+    Yes: spam(1)
+         dict['key'] = list[index]
+    ```
+    ```python
+    No: spam (1)
+        dict ['key'] = list [index]
+    ```
+    <em>Do not use parentheses in return statements or conditional statements unless using parentheses for implied line continuation. (See above.) It is however fine to use parentheses around tuples. 除非用于行连接，否则不要在返回语句或条件语句中使用括号。但可以在元组两边使用括号。</em>
+    ```python
+    Yes: if foo:
+             bar()
+         while x:
+             x = bar()
+         if x and y:
+             bar()
+         if not x:
+             bar()
+         return foo
+         for (x, y) in dict.items(): ...
+    ```
+    ```python
+    No:  if (x):
+             bar()
+         if not(x):
+             bar()
+         return (foo)
+    ```
+
+3. Do use (a) whitespace after(not before) a comma, semicolon, or colon except at the end of the line. 在逗号，分号或者冒号之后(不是之前)使用(一个)空格。
+    ```python
+    Yes: if x == 4:
+             print x, y
+         x, y = y, x
+    ```
+    ```python
+    No:  if x == 4 :
+             print x , y
+         x , y = y , x
+    ```
+
+4. Arithmetic operators and surround binary operators (assignment, comparisons, and Booleans.) with a single space on either side. 算术操作符和二元操作符(赋值，比较和布尔)两边加一个空格。
+    ```python
+    Yes: x == 1
+    ```
+    ```python
+    No:  x<1
+    ```
+    <em>Don't use spaces around the '=' sign when used to indicate a keyword argument or a default parameter value. ’=’用于指示关键字参数或默认参数值时, 不要在其两侧使用空格.</em>
+    ```python
+    Yes: def complex(real, imag=0.0): return magic(r=real, i=imag)
+    ```
+    ```python
+    No:  def complex(real, imag = 0.0): return magic(r = real, i = imag)
+    ```
+
+5. Don't use spaces to vertically align tokens on consecutive lines, since it becomes a maintenance burden (applies to :, #, =, etc.). 不要使用空格来垂直对齐多行间标记, 因为这会成为维护的负担(适用于:, #, =等)。
+    ```python
+    Yes: foo = 1000  # comment
+         long_name = 2  # comment that should not be aligned
+
+         dictionary = {
+             "foo": 1,
+             "long_name": 2,
+             }
+    ```
+    ```python
+    No:  foo       = 1000  # comment
+         long_name = 2     # comment that should not be aligned
+
+         dictionary = {
+             "foo"      : 1,
+             "long_name": 2,
+             }
+    ```
+
+6. Use ' as the string quote character, but it's okay to use the " on a string to avoid the need to \ escape within the string. 字符串y引号使用单引号，但是字符串内可以使用双引号以避免在字符串中使用转义字符。
+    ```python
+    Guide('You have reached the "died line".')
+    ```
+
+<script type="text/javascript" src="http://i5ting.github.io/git-quick-start/preview/js/jquery-1.10.2.min.js"></script><script type="text/javascript" src="http://i5ting.github.io/git-quick-start/preview/js/jquery.ztree.all-3.5.min.js"></script><script type="text/javascript" src="http://i5ting.github.io/git-quick-start/preview/js/jquery.ztree_toc.js"></script>
+    
+<SCRIPT type="text/javascript" > <!-- $(document).ready(function(){ $('#tree').ztree_toc({ is_auto_number:true, documment_selector:'.markdown-body', ztreeStyle: { width:'260px', overflow: 'auto', position: 'fixed', 'z-index': 2147483647, border: '0px none', left: '0px', top: '0px' } }); }); //--> </SCRIPT>
