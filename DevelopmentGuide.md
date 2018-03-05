@@ -36,8 +36,9 @@ Last Update Time: March 5, 2018<br>
 + [7 Punctuation and Whitespace 标点和空格](#jump)</strong>
 
 
-## <span id="1">1 Nameing 命名</span>
-### <span id="1.1">1.1 Overview 概览</span>
+<h2 id='1'>1 Nameing 命名</h2>
+<h3 id="1.1">1.1 Overview 概览</h3>
+
 | Type 类型                                | Public 公有        | Internal  内部                                                    |
 | :--------------------------------------: | :----------------: | :---------------------------------------------------------------: |
 | Modules 模块/文件                        | lower_with_under   | _lower_with_under                                                 |
@@ -349,7 +350,7 @@ Two blank lines between top-level definitions, one blank line between method def
 
 ## 7 Punctuation and Whitespace 标点和空格
 1. Do not terminate your lines with semi-colons and do not use semi-colons to put two commands on the same line. 不要在行尾使用分号，也不要用分号将两条命令放在同一行。
-<span id="jump">Hello World</span>
+
 2. No whitespace inside parentheses, brackets or braces. No whitespace before the open paren/bracket that starts an argument list, indexing or slicing. 在所有的括号内不要有空格，在参数列表，索引或者切片的左括号前不应加空格。
     ```python
     Yes: spam(ham[1], {eggs: 2}, [])
