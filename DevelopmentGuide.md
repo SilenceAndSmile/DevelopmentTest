@@ -36,7 +36,7 @@ Warning: 正式发布时可能删除中文说明
 + Begin with a double underscore and end. 以双划线开始和结束。
 + Use dashes(-) in any name. 使用连字符(-)。
 <br>
-<br>
+
 ## 2 Line Length 行长度
 ```
 Maximum line length is 80 characters.
@@ -224,6 +224,7 @@ PI = 3.141592654
 if i & (i-1) == 0:  # true if i is a power of 2
     pass
 ```
+<br>
 
 ## 4 Imports Formatting 导入格式
 ```
@@ -259,6 +260,7 @@ from ..metrics.pairwise import pairwise_kernels
 # global variables and constants of module.
 pass
 ```
+<br>
 
 ## 5 Indentation 缩进
 ```
@@ -271,6 +273,7 @@ Align wrapped elements vertically for line continuation. 行连接使用垂直�
 x = ('This will build a very long long '
      'long long long long long long string')
 ```
+<br>
 
 ## 6 Blank Lines 空行
 ```
@@ -317,5 +320,6 @@ def _validate_center_shape(X, n_centers, centers):
 
 pass
 ```
+<br>
 
 ## 7 Punctuation and Whitespace 标点和空格
