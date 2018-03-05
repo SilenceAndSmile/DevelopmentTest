@@ -1,7 +1,8 @@
-# Graph Embedding Development Guide Beta v1.0
+# Graph Embedding Development Guide for Python Beta v1.0
 <br>
 <br>
 This guide was written by using Atom.<br>
+The python style of this guide was referred to PEP8 and google python style guide.<br>
 Warning: 正式发布时可能删除中文说明
 
 ### Python Version: 3.6(.2) python版本: 3.6(.2)
@@ -232,6 +233,35 @@ Imports are put at the top of the file, after the comments of module and before 
   2. third-party imports 第三方库导入
   3. application-specific imports 应用程序(本项目的package/module)导入
 
-  Within each grouping, imports should be sorted lexicographically, ignoring case, according to each module's full package path. 
+  Within each grouping, imports need to be sorted lexicographically, ignoring case, according to each module's full package path. 在每个分组内，要根据每个模块的完整包路径按字典序排序, 忽略大小写。<br>
+  One blank line between different groups. 不同组之间间隔一行。
+
+```python
+# module comments
+import warnings
+
+import numpy as np
+
+from ..base import BaseEstimator, ClusterMixin
+from ..metrics.pairwise import pairwise_kernels
+...
+
+# global variables and constants of module.
+pass
+```
 
 ## 5 Indentation 缩进
+```
+Indent python code blocks with 4 spaces.
+使用四个空格来缩进代码。
+```
+<strong>Never use tabs or mix tabs and spaces. 永远不要使用tab或者混合使用tab和空格(缩进时)。</strong>
+Align wrapped elements vertically for line continuation. 行连接使用垂直对齐。
+```Python
+x = ('This will build a very long long '
+     'long long long long long long string')
+```
+
+## 6 Blank Lines 空行
+
+## 7 Punctuation and Whitespace 标点和空格
