@@ -9,6 +9,7 @@ Warning: 正式发布时可能删除中文说明
 ### Encoding Format: UTF-8 编码格式：UTF-8
 
 ***
+<br>
 
 ## 1 Nameing 命名
 ### 1.1 Overview 概览
@@ -34,7 +35,8 @@ Warning: 正式发布时可能删除中文说明
 + Single character names except for counters or iterators. 除了计数器和迭代器外使用一个字符命名。
 + Begin with a double underscore and end. 以双划线开始和结束。
 + Use dashes(-) in any name. 使用连字符(-)。
-
+<br>
+<br>
 ## 2 Line Length 行长度
 ```
 Maximum line length is 80 characters.
@@ -61,6 +63,7 @@ Yes: SpectralClustering(
          affinity=’rbf’, n_neighbors=10, eigen_tol=0.0, assign_labels=’kmeans’, degree=3,
          coef0=1, kernel_params=None, n_jobs=1)
 ```
+<br>
 
 ## 3 Comments 注释
 ```
