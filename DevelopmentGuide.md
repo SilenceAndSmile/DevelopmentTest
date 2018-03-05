@@ -16,10 +16,9 @@ Last Update Time: March 5, 2018<br>
 <br>
 
 ## Contents 目录
-<strong>
-+ [1 Nameing 命名](#1)
-  + 1.1 Overview 概览
-  + 1.2 Supplementary Explanation 补充说明
+<strong>+ [1 Nameing 命名](#1)
+  + [1.1 Overview 概览](#1.1)
+  + [1.2 Supplementary Explanation 补充说明](#1.2)
   + 1.3 Names to Avoid 命名时应当避免
 + 2 Line Length 行长度
 + 3 Comments 注释
@@ -34,12 +33,11 @@ Last Update Time: March 5, 2018<br>
 + 4 Imports Formatting 导入格式
 + 5 Indentation 缩进
 + 6 Blank Lines 空行
-+ 7 Punctuation and Whitespace 标点和空格
-</strong>
++ 7 Punctuation and Whitespace 标点和空格</strong>
 
 
 ## <span id="1">1 Nameing 命名</span>
-### 1.1 Overview 概览
+### <span id="1.1">1.1 Overview 概览</span>
 | Type 类型                                | Public 公有        | Internal  内部                                                    |
 | :--------------------------------------: | :----------------: | :---------------------------------------------------------------: |
 | Modules 模块/文件                        | lower_with_under   | _lower_with_under                                                 |
@@ -53,7 +51,7 @@ Last Update Time: March 5, 2018<br>
 | Function/Method Parameters 函数/方法参数 | lower_with_under   | lower_with_under                                                  |
 | Local Variables 局部变量                 | lower_with_under   |                                                                   |
 
-### 1.2 Supplementary Explanation 补充说明
+### <span id="1.2">1.2 Supplementary Explanation 补充说明</span>
 + A Python Module is a file that contains Python object definitions and Python statements. A Module accomplishes a task.Unlike to c++/Java,there is no need to limit yourself to one class per module.  一个Python Module(模块)， 是一个包含了Python对象定义和Python语句的文件。与c++/Java不同，不限制一个模块一个类。
 + "Internal" means internal to a module or protected or private within a class. ”内部(Internal)”表示仅模块内可用，或者在类内是保护或私有的。
 + To begin with a single underscore, it means protected. To begin with a double underscore, it means private. 单划线开头表示proteced，双划线开头表示private。
