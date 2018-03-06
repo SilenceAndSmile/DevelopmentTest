@@ -37,13 +37,18 @@ Last Update Time: March 5, 2018<br>
 <br>
 
 <h2 id='1'>1 Nameing 命名</h2>
+
+```
+Use meaningful English word complete spelling for naming.
+命名要使用有意义的英文单词全拼(实例变量、局部变量例外)。
+```
 <h3 id='1.1'>1.1 Overview 概览</h3>
 
 | Type 类型                                | Public 公有        | Internal  内部                                                    |
 | :--------------------------------------: | :----------------: | :---------------------------------------------------------------: |
 | Modules 模块/文件                        | lower_with_under   | _lower_with_under                                                 |
 | Classes 类                               | CapWords           | _CapWords                                                         |
-| Exceptions 表达式                        | CapWords           |                                                                   |
+| Exceptions 异常                          | CapWords           |                                                                   |
 | Functions 函数                           | lower_with_under() | _lower_with_under()                                               |
 | Global/Class Constants 全局/类常量       | CAPS_WITH_UNDER    | CAPS_WITH_UNDER                                                   |
 | Global/Class Variables 全局/类变量       | lower_with_under   | _lower_with_under                                                 |
