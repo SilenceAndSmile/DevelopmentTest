@@ -4,9 +4,9 @@
 This guide was written by using Atom.<br>
 The references of this python style guide were:
 
-+ [1.Google Python Style Guide](http://google.github.io/styleguide/pyguide.html)
-+ [PEP 8 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/)
-+ [Python 编码规范 - 李林克斯](http://liyangliang.me/posts/2015/08/simple-python-style-guide/)
++ [1. Google Python Style Guide](http://google.github.io/styleguide/pyguide.html)
++ [2. PEP 8 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/)
++ [3. Python 编码规范 - 李林克斯](http://liyangliang.me/posts/2015/08/simple-python-style-guide/)
 
 <br>
 Author: SilenceAndSmile<br>
