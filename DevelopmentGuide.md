@@ -40,7 +40,7 @@ Last Update Time: March 7, 2018<br>
 + [6 Blank Lines 空行](#6)
 + [7 Punctuation and Whitespace 标点和空格](#7)</strong>
 <br>
----
+***
 
 <h2 id='1'>1 Nameing 命名</h2>
 
