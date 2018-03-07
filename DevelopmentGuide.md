@@ -2,10 +2,15 @@
 <br>
 <br>
 This guide was written by using Atom.<br>
-The python style of this guide references PEP8 and google python style guide.<br>
+The references of this python style guide were:
+
++ [1.Google Python Style Guide](http://google.github.io/styleguide/pyguide.html)
++ [PEP 8 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/)
++ [Python 编码规范 - 李林克斯](http://liyangliang.me/posts/2015/08/simple-python-style-guide/)
+
 <br>
 Author: SilenceAndSmile<br>
-Last Update Time: March 5, 2018<br>
+Last Update Time: March 7, 2018<br>
 <br>
 <del>Warning: 正式发布时可能删除中文说明</del>
 
@@ -35,6 +40,7 @@ Last Update Time: March 5, 2018<br>
 + [6 Blank Lines 空行](#6)
 + [7 Punctuation and Whitespace 标点和空格](#7)</strong>
 <br>
+---
 
 <h2 id='1'>1 Nameing 命名</h2>
 
