@@ -10,7 +10,7 @@ The references of this python style guide were:
 
 <br>
 Author: SilenceAndSmile<br>
-Last Update Time: March 7, 2018<br>
+Last Update Time: March 11, 2018<br>
 <br>
 <del>Warning: 正式发布时可能删除中文说明</del>
 
@@ -21,7 +21,7 @@ Last Update Time: March 7, 2018<br>
 <br>
 
 ## Contents 目录
-+ <strong>[1 Nameing 命名](#1)
++ <strong>[1 Naming 命名](#1)
   + [1.1 Overview 概览](#1.1)
   + [1.2 Supplementary Explanation 补充说明](#1.2)
   + [1.3 Names to Avoid 命名时应当避免](#1.3)
@@ -43,7 +43,7 @@ Last Update Time: March 7, 2018<br>
 
 ***
 <br>
-<h2 id='1'>1 Nameing 命名</h2>
+<h2 id='1'>1 Naming 命名</h2>
 
 ```
 Use meaningful English word complete spelling for naming.
